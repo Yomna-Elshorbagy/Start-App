@@ -1,0 +1,6 @@
+.layer{
+    position: fixed;
+    background-color: rgb(23, 24, 29);
+    z-index: 99;
+    width: 100%;
+}

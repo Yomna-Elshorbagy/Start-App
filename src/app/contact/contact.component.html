@@ -1,0 +1,89 @@
+<section>
+  <div class="container h-100">
+    <div class="contact">
+      <div class="heading">
+        <h1 class="text-uppercase pt-3 text-center">conatct section</h1>
+      </div>
+      <div class="line d-flex justify-content-center align-items-center">
+        <div class="line-div me-3"></div>
+        <div><i class="fa-solid fa-star"></i></div>
+        <div class="line-div2 ms-3"></div>
+      </div>
+      <div class="form pt-2">
+        <form action="" class="w-75 p-2 mt-3 m-auto">
+          <div class="pt-5 pb-2">
+          <label for="userName" *ngIf="NameInput.valid" class="pb-2 ms-3 l-color">UserName:</label>
+          <input
+            type="text"
+            placeholder="user Name"
+            class="form-control border-0 border-bottom pt-1"
+            name="userName"
+            id="userName"
+            required
+            [(ngModel)]="user.name"
+            #NameInput="ngModel"
+            [ngClass]="{
+              'is-invalid': NameInput.touched && NameInput.invalid
+            }"
+          />
+          </div>
+
+
+          <div class="pt-5 pb-2">
+          <label for="userAge" *ngIf="ageInput.value" class="pb-2 ms-3 l-color">UserAge:</label>
+          <input
+            type="number"
+            placeholder="user Age"
+            name="userAge"
+            id="userAge"
+            class="form-control border-0 border-bottom pt-2"
+            #ageInput="ngModel"
+            [(ngModel)] ="user.age"
+          />
+        </div>
+
+          <div class="pt-5 pb-2">
+          <label for="userEmail" class="ms-3 pb-2 l-color" *ngIf="emailInput.valid"
+            >UserEmail:</label
+          >
+          <input
+            type="email"
+            placeholder="user Email"
+            name="userEmail"
+            id="userEmail"
+            class="form-control border-0 border-bottom pt-2"
+            required
+            [(ngModel)]="user.email"
+            #emailInput="ngModel"
+            [ngClass]="{
+              'is-invalid': emailInput.touched && emailInput.invalid
+            }"
+          />
+          </div>
+
+          <div class="pt-5 pb-2">
+          <label for="userPass" class="ms-3 pb-2 l-color" *ngIf="PassInput.valid"
+            >UserPassword:</label
+          >
+          <input
+            type="password"
+            placeholder="password"
+            name="userPass"
+            id="userPass"
+            class="form-control border-0 border-bottom pt-2"
+            required
+            [(ngModel)]="user.password"
+            #PassInput="ngModel"
+            [ngClass]="{
+              'is-invalid': PassInput.touched && PassInput.invalid
+            }"
+          />
+          </div>
+          <div class="pt-4">
+            <button class="btn btn-color"> Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
